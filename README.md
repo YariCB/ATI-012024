@@ -15,5 +15,5 @@ Este reto consiste en realizar una serie de ejercicios planteados, con el objeti
 
 ### Herramientas utilizadas
 <a name="herramientas"></a>
-- Visual Estudio Code
+- Visual Studio Code
 - Github
