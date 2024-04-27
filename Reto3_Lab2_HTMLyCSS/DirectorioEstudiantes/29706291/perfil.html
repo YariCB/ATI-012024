@@ -17,10 +17,9 @@
         a:visited{
             color: red;
         }
-        .container{
+        body{
             display: flex;
             justify-content: left;
-            align-items: flex-start;
         }
         img{
             width: 210px;
@@ -28,55 +27,59 @@
             border-top-left-radius: 25%;
         }
         .DatosPerfil{
-            overflow: auto;
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             padding: 20px;
             height: 330px;
             border: 3px solid #91116f;
             box-shadow: 10px 10px 0px rgba(57, 7, 131, 0.3);
             background: linear-gradient(to bottom right, #6593f5, #b88dff);
         }
+        @media only screen and (max-width: 750px) {
+            h1{
+                font-size: 120%;
+            }
+            .text{
+                font-size: 70%;
+            }
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="29706291.jpg" alt="Foto de Yarima">
-        <div class="DatosPerfil">
-            <h1>Yarima Contreras Blanco</h1>
-            <p class="Descripcion"><i>
-                Soy estudiante de 6to semestre de la Licenciatura en Computación de UCV. Perteneciente al movimiento estudiantil Cluster y Preparadora de la asignatura Matemáticas Discretas I. Además, también poseo un gran interés en el campo de la ilustración y animación. Actualmente trabajo como ilustradora digital independiente, principalmente en la corriente artística de anime y chibi, pero adaptándome fácilmente a estilos cartoon o semi-realistas.
-            </i></p>
+    <img src="29706291.jpg" alt="Foto de Yarima">
+    <div class="DatosPerfil">
+        <h1 class>Yarima Contreras Blanco</h1>
+        <p class="Descripcion text"><i>
+            Soy estudiante de 6to semestre de la Licenciatura en Computación de UCV. Perteneciente al movimiento estudiantil Cluster y Preparadora de la asignatura Matemáticas Discretas I. Además, también poseo un gran interés en el campo de la ilustración y animación. Actualmente trabajo como ilustradora digital independiente, principalmente en la corriente artística de anime y chibi, pero adaptándome fácilmente a estilos cartoon o semi-realistas.
+        </i></p>
         
-            <br>
+        <table class="text">
+            <tr>
+                <td> Mi color favorito es: </td>
+                <td> Morado. </td>
+            </tr>
+            <tr>
+                <td> Mi libro favorito es: </td>
+                <td> La Saga de Harry Potter y El Código Da Vinci. </td>
+            </tr>
+            <tr>
+                <td> Mi estilo de música preferida es: </td>
+                <td> No tengo un estilo en particular. Si me gusta, me gusta. </td>
+            </tr>
+            <tr>
+                <td> Mis videojuegos favoritos son: </td>
+                <td> Genshin Impact y Honkai Star Rail (mientras mi laptop los aguante). </td>
+            </tr>
+            <tr>
+                <td> <b>Lenguajes de programación aprendidos:</b> </td>
+                <td> <b>C++, JavaScript, Python, C y Java.</b> </td>
+            </tr>
+        </table>
         
-            <table>
-                <tr>
-                    <td> Mi color favorito es: </td>
-                    <td> Morado. </td>
-                </tr>
-                <tr>
-                    <td> Mi libro favorito es: </td>
-                    <td> La Saga de Harry Potter y El Código Da Vinci. </td>
-                </tr>
-                <tr>
-                    <td> Mi estilo de música preferida es: </td>
-                    <td> No tengo un estilo en particular. Si me gusta, me gusta. </td>
-                </tr>
-                <tr>
-                    <td> Mis videojuegos favoritos son: </td>
-                    <td> Genshin Impact y Honkai Star Rail (mientras mi laptop los aguante). </td>
-                </tr>
-                <tr>
-                    <td> <b>Lenguajes de programación aprendidos:</b> </td>
-                    <td> <b>C++, JavaScript, Python, C y Java.</b> </td>
-                 </tr>
-            </table>
-        
-            <p>
-                Si necesitan comunicarse conmigo, me pueden escribir a: <a href="mailto:yarimacontreras.ucv@gmail.com">yarimacontreras.ucv@gmail.com</a> 
-            </p>
-        </div>
+        <p class="text">
+            Si necesitan comunicarse conmigo, me pueden escribir a: <a href="mailto:yarimacontreras.ucv@gmail.com">yarimacontreras.ucv@gmail.com</a> 
+        </p>
     </div>
 </body>
 </html>
