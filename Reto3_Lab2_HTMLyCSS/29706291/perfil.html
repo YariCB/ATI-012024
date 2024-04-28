@@ -18,15 +18,17 @@
             color: red;
         }
         body{
-            display: flex;
+            float: inline-start;
             justify-content: left;
         }
         img{
+            float: inline-start;
             width: 210px;
             height: 375px;
             border-top-left-radius: 25%;
         }
         .DatosPerfil{
+            float: inline-start;
             width: 100%;
             max-width: 800px;
             padding: 20px;
@@ -42,7 +44,19 @@
             .text{
                 font-size: 70%;
             }
-        }
+            img{
+                width: 30%;
+            }
+            .DatosPerfil{
+                width: auto;
+                max-width: 60%;
+            }
+            body{
+                display: inline;
+                float: inline-start;
+                width: 80%;
+                max-width: 700px;
+            }
 
     </style>
 </head>

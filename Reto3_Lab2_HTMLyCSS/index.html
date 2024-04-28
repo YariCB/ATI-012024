@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Listado</title>
+    <link rel="icon" href="http://www.ciens.ucv.ve/portalasig2/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            color: aliceblue;
+            background-color: #87b1ef;
+            overflow: hidden;
+        }
+        nav ul{
+            list-style: none;
+            margin: auto;
+        }
+        nav ul li{
+            display: inline;
+            ;
+            align-items: center;
+            padding: 0px;
+        }
+        nav ul li a{
+            display: inline;
+            align-items: center;
+            color: aliceblue;
+            text-decoration: none;
+        }
+        .menuItem{
+            float: left;
+            padding: 15px;
+            width: 30%;
+        }
+        .menuItem:not(:last-child) {
+            border-right: 1px solid white;
+            height: 36px;
+        }
+        .bigFont{
+            font-size: 35px;
+        }
+        input[type=text]{
+            border: #709ee4;
+            margin: 5px;
+            width: 200px;
+            height: 25px;
+        }
+        input[type=submit]{
+            color:#87b1ef;
+            border: #709ee4;
+            background-color: aliceblue;
+            margin: 5px;
+            height: 25px;
+        }
+        
+        .listStudents{
+            list-style: none;
+            justify-content: center;
+        }
+        .listItem{
+            float: left;
+            width: 19%;
+            margin: 1%;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: #87b1ef;
+            background-color: #f5f7f9;
+            box-shadow: 2px 2px 0px rgba(108, 108, 108, 0.3);
+        }
+        .listItem img{
+            width: 100px;
+            height: 150px;
+        }
+        section ul li a{
+            color: #87b1ef;
+            text-decoration: none;
+        }
+
+        footer{
+            clear: both;
+            text-align: center;
+            background-color: #87b1ef;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="menuList">
+                <li class="menuItem">
+                    <a href="index.html"> 
+                        <span class="bigFont"> ATI </span>
+                        <span>[UCV]</span>
+                        <span class="bigFont">2024-1</span>
+                    </a>
+                </li>
+                <li class="menuItem"> Hola, <a href="29706291/perfil.html"> Yarima</a> </li>
+                <li class="menuItem">
+                    <form class="menuForm">
+                        <input type="text" placeholder=" Nombre...">
+                        <input type="submit" value="Buscar">
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <ul class="listStudents">
+            <li class="listItem saludo">
+                <a href="29706291/perfil.html"><img src="29706291/29706291.jpg"></a>
+                <br>
+                <a href="29706291/perfil.html">Yarima Contreras Blanco</a>
+            </li>
+            <li class="listItem">
+                <img src="dummy6/dummy.jpg">
+                <br> Juan Antonio Pérez
+            </li>
+            <li class="listItem">
+                <img src="dummy3/dummy.jpg">
+                <br> Maritza Rodríguez
+            </li>
+            <li class="listItem">
+                <img src="dummy1/dummy.jpg">
+                <br> Emilia Casado
+            </li>
+            <li class="listItem">
+                <img src="dummy4/dummy.jpg">
+                <br> Enrique Colina
+            </li>
+            <li class="listItem">
+                <img src="dummy2/dummy.jpg">
+                <br> María Elena Pinto
+            </li>
+            <li class="listItem">
+                <img src="dummy5/dummy.jpg">
+                <br> Ronald Gutiérrez
+            </li>
+            <li class="listItem">
+                <img src="dummy6/dummy.jpg">
+                <br> Juan Antonio Pérez
+            </li>
+            <li class="listItem">
+                <img src="dummy3/dummy.jpg">
+                <br> Maritza Rodríguez
+            </li>
+            <li class="listItem">
+                <img src="dummy1/dummy.jpg">
+                <br> Emilia Casado
+            </li>
+            <li class="listItem">
+                <img src="dummy4/dummy.jpg">
+                <br> Enrique Colina
+            </li>
+            <li class="listItem">
+                <img src="dummy2/dummy.jpg">
+                <br> María Elena Pinto
+            </li> 
+        </ul>
+    </section>
+
+    <footer>
+        <p> Copyright © 2024 Escuela de computación - ATI. Todos los derechos reservados </p>
+    </footer>
+
+</body>
+</html>
