@@ -1,0 +1,141 @@
+/* ESTILO INDEX.HTML */
+
+.bodyIndex{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    color: aliceblue;
+    background-color: #87b1ef;
+    overflow: hidden;
+}
+nav ul{
+    list-style: none;
+    margin: auto;
+}
+nav ul li{
+    display: inline;
+    align-items: center;
+    padding: 0px;
+}
+nav ul li a{
+    display: inline;
+    align-items: center;
+    color: aliceblue;
+    text-decoration: none;
+}
+.menuItem{
+    float: left;
+    padding: 15px;
+    width: 30%;
+    height: 50px;
+    line-height: 52px;
+    text-align: center;
+}
+.menuItem:not(:last-child) {
+    border-right: 1px solid white;
+    height: 52px;
+}
+.bigFont{
+    font-size: 35px;
+}
+input[type=text]{
+    border: #709ee4;
+    margin: 5px;
+    width: 200px;
+    height: 25px;
+}
+input[type=submit]{
+    color:#87b1ef;
+    border: #709ee4;
+    background-color: aliceblue;
+    margin: 5px;
+    height: 25px;
+}
+
+.listStudents{
+    list-style: none;
+    justify-content: center;
+}
+.listItem{
+    float: left;
+    width: 19%;
+    margin: 1%;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #87b1ef;
+    background-color: #f5f7f9;
+    box-shadow: 2px 2px 0px rgba(108, 108, 108, 0.3);
+}
+.listItem img{
+    width: 100px;
+    height: 150px;
+}
+section ul li a{
+    color: #87b1ef;
+    text-decoration: none;
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    background-color: #87b1ef;
+    padding: 5px;
+}
+
+
+/* ESTILO PERFIL.HTML */
+
+.Descripcion{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: justify;
+    font-size: 15px;
+}
+h1, .email{
+    color: #91116f;
+}
+.email:visited{
+    color: red;
+}
+.tarjetaPerfil{
+    float: inline-start;
+    justify-content: left;
+}
+.pfp{
+    float: inline-start;
+    width: 210px;
+    height: 375px;
+    border-top-left-radius: 4pc;
+}
+.DatosPerfil{
+    float: inline-start;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    height: 330px;
+    border: 3px solid #91116f;
+    box-shadow: 10px 10px 0px rgba(57, 7, 131, 0.3);
+    background: linear-gradient(to bottom right, #6593f5, #b88dff);
+}
+@media only screen and (max-width: 750px) {
+    h1{
+        font-size: 120%;
+    }
+    .text{
+        font-size: 70%;
+    }
+    .pfp{
+        width: 30%;
+    }
+    .DatosPerfil{
+        width: auto;
+        max-width: 60%;
+    }
+    .tarjetaPerfil{
+        display: inline;
+        float: inline-start;
+        width: 80%;
+        max-width: 700px;
+    }
+}
