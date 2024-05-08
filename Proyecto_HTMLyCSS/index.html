@@ -33,7 +33,13 @@
     <section>
         <ul class="listStudents">
             <li class="listItem saludo">
-                <a href="29706291/perfil.html"><img src="29706291/29706291.jpg"></a>
+                <picture class="pfpList">
+                    <source media="(max-width:480px)" srcset="29706291/29706291Pequena.jpg">
+                    <source media="(min-width:481px)" srcset="29706291/29706291Pequena.jpg">
+                    <source media="(min-width:769px)" srcset="29706291/29706291Grande.jpg">
+                    <source media="(min-width:1025px)" srcset="29706291/29706291Grande.jpg">
+                    <img class="pfpList" src="29706291/29706291Grande.jpg" alt="Foto de Yarima">
+                </picture>
                 <br>
                 <a href="29706291/perfil.html">Yarima Contreras Blanco</a>
             </li>

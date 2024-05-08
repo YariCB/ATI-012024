@@ -13,28 +13,32 @@ nav ul{
     list-style: none;
     margin: auto;
 }
-nav ul li{
-    display: inline;
-    align-items: center;
-    padding: 0px;
-}
 nav ul li a{
-    display: inline;
-    align-items: center;
     color: aliceblue;
     text-decoration: none;
 }
+.menuList{
+    display: flex;
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .menuItem{
-    float: left;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
-    width: 30%;
-    height: 50px;
-    line-height: 52px;
-    text-align: center;
 }
 .menuItem:not(:last-child) {
     border-right: 1px solid white;
-    height: 52px;
+}
+.menuForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
 }
 .bigFont{
     font-size: 35px;
@@ -54,21 +58,25 @@ input[type=submit]{
 }
 
 .listStudents{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
     list-style: none;
-    justify-content: center;
+    padding: 0;
 }
+
 .listItem{
-    float: left;
-    width: 19%;
-    margin: 1%;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
     color: #87b1ef;
     background-color: #f5f7f9;
     box-shadow: 2px 2px 0px rgba(108, 108, 108, 0.3);
 }
-.listItem img{
+.listItem img, .pfpList{
     width: 100px;
     height: 150px;
 }
@@ -82,7 +90,6 @@ section ul li a{
 }
 
 footer{
-    clear: both;
     text-align: center;
     background-color: #87b1ef;
     padding: 5px;
@@ -103,17 +110,16 @@ h1, .email{
     color: red;
 }
 .tarjetaPerfil{
-    float: inline-start;
+    display: flex;
     justify-content: left;
 }
 .pfp{
-    float: inline-start;
+    display: flex;
     width: 210px;
     height: 375px;
     border-top-left-radius: 4pc;
 }
 .DatosPerfil{
-    float: inline-start;
     width: 100%;
     max-width: 800px;
     padding: 20px;
@@ -122,24 +128,122 @@ h1, .email{
     box-shadow: 10px 10px 0px rgba(57, 7, 131, 0.3);
     background: linear-gradient(to bottom right, #6593f5, #b88dff);
 }
-@media only screen and (max-width: 750px) {
+
+
+/* Media Queries para todos */
+
+/*Dispositivos Móviles*/
+@media only screen and (max-width: 480px) {
+    nav{
+        flex: 1;
+        font-size: 60%;
+    }
+    .bigFont{
+        font-size: 150%;
+    }
+    input[type=text]{
+        margin: 5px;
+        width: 25%;
+        height: auto;
+    }
+    input[type=submit]{
+        height: auto;
+    }
+
+    .listStudents{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    h1{
+        font-size: 100%;
+    }
+    .text{
+        font-size: 60%;
+    }
+    .pfp{
+        width: 100%;
+    }
+    .DatosPerfil{
+        width: 100%;
+        overflow: scroll;
+    }
+    .tarjetaPerfil{
+        display: flex;
+        align-items: flex-start;
+        width: 80%;
+        max-width: 100%;
+    }
+}
+
+/*iPads, Tablets*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    nav{
+        flex: 1;
+        font-size: 80%;
+    }
+    .bigFont{
+        font-size: 180%;
+    }
     h1{
         font-size: 120%;
     }
     .text{
-        font-size: 70%;
+        font-size: 75%;
     }
     .pfp{
-        width: 30%;
+        width: auto;
     }
     .DatosPerfil{
         width: auto;
         max-width: 60%;
     }
     .tarjetaPerfil{
-        display: inline;
-        float: inline-start;
-        width: 80%;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+    }
+}
+
+/*Pantallas pequeñas, ordenadores portátiles*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    h1{
+        font-size: 120%;
+    }
+    .text{
+        font-size: 90%;
+    }
+    .pfp{
+        width: auto%;
+    }
+    .DatosPerfil{
+        width: auto;
+        max-width: 60%;
+    }
+    .tarjetaPerfil{
+        display: flex;
+        align-items: flex-start;
+        width: 100%
+    }
+}
+
+/*Pantallas grandes, ordenadores de escritorio*/
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    h1{
+        font-size: 120%;
+    }
+    .text{
+        font-size: 75%;
+    }
+    .pfp{
+        width: auto;
+    }
+    .DatosPerfil{
+        width: auto;
+        max-width: 60%;
+    }
+    .tarjetaPerfil{
+        display: flex;
+        align-items: flex-start;
+        width: 90%;
         max-width: 700px;
     }
 }

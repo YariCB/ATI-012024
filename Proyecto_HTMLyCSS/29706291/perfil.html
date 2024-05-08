@@ -9,7 +9,13 @@
 </head>
 
 <body class="tarjetaPerfil">
-    <img class="pfp" src="29706291.jpg" alt="Foto de Yarima">
+    <picture class="pfp">
+        <source media="(max-width:480px)" srcset="29706291Pequena.jpg">
+        <source media="(min-width:481px)" srcset="29706291Pequena.jpg">
+        <source media="(min-width:769px)" srcset="29706291Grande.jpg">
+        <source media="(min-width:1025px)" srcset="29706291Grande.jpg">
+        <img class="pfp" src="29706291Grande.jpg" alt="Foto de Yarima">
+    </picture>
     <div class="DatosPerfil">
         <h1 class>Yarima Contreras Blanco</h1>
         <p class="Descripcion text"><i>
