@@ -1,0 +1,14 @@
+{	
+	"nombre":"Yarima Contreras Blanco",
+	"descripcion":"Soy estudiante de 6to semestre de la Licenciatura en Computación de UCV. Perteneciente al movimiento estudiantil Cluster y Preparadora de la asignatura Matemáticas Discretas I. Además, también poseo un gran interés en el campo de la ilustración y animación. Actualmente trabajo como ilustradora digital independiente, principalmente en la corriente artística de anime y chibi, pero adaptándome fácilmente a estilos cartoon o semi-realistas.",
+	"color": "Morado.",
+	"libro": ["La Saga de Harry Potter", "El Código Da Vinci"],
+	"musica": ["No tengo un estilo en particular. Si me gusta, me gusta."],
+	"video_juego": ["Genshin Impact", "Honkai Star Rail (mientras mi laptop los aguante)"],
+	"lenguajes":["C++", "JavaScript", "Python", "C", "Java"],
+	"email":"yarimacontreras.ucv@gmail.com",
+	"ci":"29706291",
+	"genero": "femenino",
+	"fecha_nacimiento":"17/06/2002",
+	"imagen": "29706291Grande.jpg"
+}
