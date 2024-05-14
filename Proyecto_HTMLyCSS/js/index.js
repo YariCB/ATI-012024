@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        // Buscador
+        // BUSCADOR
         
         const form = document.querySelector('.menuForm');
         form.addEventListener('submit', function(e){
@@ -60,9 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
           if(filterestStudents.length > 0){
             filterestStudents.forEach(student =>{
+
               const listItem = document.createElement('li');
-              listItem.textContent = student.nombre;
+              listItem.classList.add('listItem');
+              
+              const picture = document.createElement('picture');
+              
+              const source480 = document.createElement('source');
+              source480.setAttribute('media', '(max-width:480px)');
+              source480.setAttribute('srcset', `reto5/${student.imagen}`);
+              
+              const sourceMin = document.createElement('source');
+              sourceMin.setAttribute('media', '(min-width:481px)');
+              sourceMin.setAttribute('srcset', `reto5/${student.imagen}`);
+              
+              const img = document.createElement('img');
+              img.classList.add('pfpList');
+              img.setAttribute('src', `reto5/${student.imagen}`);
+              img.setAttribute('alt', 'Foto de ' + student.nombre);
+              
+              const link = document.createElement('a');
+              link.setAttribute('href', 'perfil.html?ci=' + student.ci);
+              link.textContent = student.nombre;
+              
+              picture.appendChild(source480); 
+              picture.appendChild(sourceMin);
+              picture.appendChild(img);
+              
+              listItem.appendChild(picture);
+              listItem.appendChild(document.createElement('br'));
+              listItem.appendChild(link);
+              
               list.appendChild(listItem);
+
             });
           } else {
             const message = document.createElement('li');
