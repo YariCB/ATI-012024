@@ -41,6 +41,38 @@ document.addEventListener('DOMContentLoaded', function() {
           list.appendChild(listItem);
         });
 
+
+        // Buscador
+        
+        const form = document.querySelector('.menuForm');
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+
+          const query = document.getElementById('nombre').value;
+          searchStudents(query);
+        });
+
+        function searchStudents(query){
+          const filterestStudents = data.filter(student =>
+            student.nombre.toLowerCase().includes(query.toLowerCase())
+          );
+          list.innerHTML = '';
+
+          if(filterestStudents.length > 0){
+            filterestStudents.forEach(student =>{
+              const listItem = document.createElement('li');
+              listItem.textContent = student.nombre;
+              list.appendChild(listItem);
+            });
+          } else {
+            const message = document.createElement('li');
+            message.classList.add('noResults');
+            message.textContent = `No hay alumnos que tengan en su nombre: ${query}`;
+            list.appendChild(message);
+          }
+        }
+
+
       })
       .catch(error => {
         console.error('Error al cargar el archivo JSON:', error);
@@ -50,13 +82,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // PERFIL.HTML
 
-const urlParams = new URLSearchParams(window.location.search);
+let urlParams = new URLSearchParams(window.location.search);
 const perfilCI = urlParams.get('ci');
 const rutaPerfil = `reto5/${perfilCI}/perfil.json`;
+
+let tdColorTitulo, tdLibroTitulo, tdMusicaTitulo, tdVideojuegosTitulo, bLenguajesTitulo;
 
 fetch(rutaPerfil)
   .then(response => response.json())
   .then(perfil => {
+
+    document.title = perfil.nombre;
 
     const img = document.querySelector('.pfp');
     img.src = `reto5/${perfilCI}/${perfil.imagen}`;
@@ -71,7 +107,7 @@ fetch(rutaPerfil)
 
     // Color favorito
     const filaColor = document.createElement('tr');
-    const tdColorTitulo = document.createElement('td');
+    tdColorTitulo = document.createElement('td');
     const tdColorContenido = document.createElement('td');
     tdColorTitulo.textContent = 'Mi color favorito es: ';
     tdColorContenido.textContent = perfil.color;
@@ -81,7 +117,7 @@ fetch(rutaPerfil)
 
     // Libro favorito
     const filaLibro = document.createElement('tr');
-    const tdLibroTitulo = document.createElement('td');
+    tdLibroTitulo = document.createElement('td');
     const tdLibroContenido = document.createElement('td');
     tdLibroTitulo.textContent = 'Mi libro favorito es: ';
     tdLibroContenido.textContent = perfil.libro.join(', ');
@@ -91,7 +127,7 @@ fetch(rutaPerfil)
 
     // Estilo de música preferida
     const filaMusica = document.createElement('tr');
-    const tdMusicaTitulo = document.createElement('td');
+    tdMusicaTitulo = document.createElement('td');
     const tdMusicaContenido = document.createElement('td');
     tdMusicaTitulo.textContent = 'Mi estilo de música preferida es:';
     tdMusicaContenido.textContent = perfil.musica.join(', ');
@@ -101,7 +137,7 @@ fetch(rutaPerfil)
 
     // Videojuegos favoritos
     const filaVideojuegos = document.createElement('tr');
-    const tdVideojuegosTitulo = document.createElement('td');
+    tdVideojuegosTitulo = document.createElement('td');
     const tdVideojuegosContenido = document.createElement('td');
     tdVideojuegosTitulo.textContent = 'Mis videojuegos favoritos son:';
     tdVideojuegosContenido.textContent = perfil.video_juego.join(', ');
@@ -113,7 +149,7 @@ fetch(rutaPerfil)
     const filaLenguajes = document.createElement('tr');
     const tdLenguajesTitulo = document.createElement('td');
     const tdLenguajesContenido = document.createElement('td');
-    const bLenguajesTitulo = document.createElement('b');
+    bLenguajesTitulo = document.createElement('b');
     const bLenguajesContenido = document.createElement('b');
     bLenguajesTitulo.textContent = 'Lenguajes de programación aprendidos:';
     bLenguajesContenido.textContent = perfil.lenguajes.join(', ');
@@ -132,4 +168,32 @@ fetch(rutaPerfil)
   })
   .catch(error => {
     console.error('Error al obtener los datos del perfil: ', error);
+  });
+
+
+// IDIOMA
+
+urlParams = new URLSearchParams(window.location.search);
+const lang = urlParams.get('lang')
+
+fetch(`reto5/conf/config${lang}.json`)
+  .then(response => response.json())
+  .then(data => {
+    
+    document.getElementById('sitio').textContent = data.sitio.join(' ');
+    document.getElementById('saludo').textContent = data.saludo;
+    document.getElementById('nombre').placeholder = data.nombre;
+    document.getElementById('buscar').value = data.buscar;
+    document.getElementById('copyRight').textContent = data.copyRight;
+
+    tdColorTitulo.textContent = data.color;
+    tdLibroTitulo.textContent = data.libro;
+    tdMusicaTitulo.textContent = data.musica;
+    tdVideojuegosTitulo.textContent = data.video_juego;
+    bLenguajesTitulo.textContent = data.lenguages;
+    document.getElementById('email').textContent = data.email;
+
+  })
+  .catch(error => {
+    console.error('Error al cargar el archivo JSON: ', error);
   });

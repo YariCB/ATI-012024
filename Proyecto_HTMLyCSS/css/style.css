@@ -2,6 +2,9 @@
 
 .bodyIndex{
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 nav{
@@ -64,6 +67,14 @@ input[type=submit]{
     list-style: none;
     padding: 0;
 }
+.noResults{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #87b1ef;
+    font-size: 140%;
+}
 
 .listItem{
     display: flex;
@@ -90,6 +101,7 @@ section ul li a{
 }
 
 footer{
+    margin-top: auto;
     text-align: center;
     background-color: #87b1ef;
     padding: 5px;
@@ -103,11 +115,11 @@ footer{
     text-align: justify;
     font-size: 15px;
 }
-h1, .email{
-    color: #91116f;
-}
 .email:visited{
     color: red;
+}
+h1, #perfilEmail{
+    color: #91116f;
 }
 .tarjetaPerfil{
     display: flex;
