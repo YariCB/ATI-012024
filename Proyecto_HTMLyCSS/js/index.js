@@ -41,6 +41,38 @@ document.addEventListener('DOMContentLoaded', function() {
           list.appendChild(listItem);
         });
 
+
+        // Buscador
+        
+        const form = document.querySelector('.menuForm');
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+
+          const query = document.getElementById('nombre').value;
+          searchStudents(query);
+        });
+
+        function searchStudents(query){
+          const filterestStudents = data.filter(student =>
+            student.nombre.toLowerCase().includes(query.toLowerCase())
+          );
+          list.innerHTML = '';
+
+          if(filterestStudents.length > 0){
+            filterestStudents.forEach(student =>{
+              const listItem = document.createElement('li');
+              listItem.textContent = student.nombre;
+              list.appendChild(listItem);
+            });
+          } else {
+            const message = document.createElement('li');
+            message.classList.add('noResults');
+            message.textContent = `No hay alumnos que tengan en su nombre: ${query}`;
+            list.appendChild(message);
+          }
+        }
+
+
       })
       .catch(error => {
         console.error('Error al cargar el archivo JSON:', error);
